@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay Example</title>
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: gray;
+    height: 100vh; /* Ensure body takes full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 310px;
+    height: 400px;
+    position: relative; /* Use relative positioning for absolute children */
+    box-shadow: 0 10px 20px rgb(40, 40, 40);
+}
+
+img {
+    height: 100%;
+    width: 100%; /* Set width to 100% to fit container */
+    display: block; /* Remove any inline gap */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    background-color: black;
+    cursor: pointer;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: Verdana, sans-serif; /* Added sans-serif as fallback */
+    text-align: center;
+}
+
+.container:hover .overlay {
+    opacity: 0.8;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="photo-1611042553365-9b101441c135.avif" alt="Example Image">
+        <div class="overlay">
+            <div class="content">overlay example</div>
+        </div>
+    </div>
+</body>
+</html>
+
+
